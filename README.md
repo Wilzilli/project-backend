@@ -58,6 +58,7 @@ http://localhost:8080/v3/api-docs
 - Requisitos funcionais e não funcionais: `docs/requisitos.md`
 - LGPD, segurança e auditoria: `docs/lgpd-seguranca.md`
 - Plano de testes: `docs/plano-de-testes.md`
+- Diagramas: `docs/diagramas.md`
 
 ## Autenticação
 
