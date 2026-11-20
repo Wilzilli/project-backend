@@ -35,7 +35,7 @@ CREATE TABLE estoques (
     CONSTRAINT uk_unidade_produto UNIQUE (unidade_id, produto_id)
 );
 
--- Tabela principal de pedidos e seus dados comerciais.
+-- Tabela de Pedidos (Com o campo obrigatório canalPedido exigido pelo roteiro)
 CREATE TABLE pedidos (
     id SERIAL PRIMARY KEY,
     cliente_id INT NOT NULL REFERENCES usuarios(id),
