@@ -235,3 +235,9 @@ DB_NAME=raizes_db
 DB_USER=postgres
 DB_PASSWORD=sua_senha
 ```
+
+## Finalização do trabalho
+
+- Conclusão: `docs/conclusao.md`
+- Referências: `docs/referencias.md`
+- Checklist da entrega: `docs/checklist-entrega.md`
