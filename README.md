@@ -197,6 +197,14 @@ Cada evidência deve mostrar o método, URL, autenticação, entrada, resposta e
 ./mvnw test
 ```
 
+## Empacotar a aplicação
+
+```powershell
+./mvnw clean package
+```
+
+O arquivo executável será gerado em `target/`.
+
 ## Segurança e configurações
 
 Não utilizar senhas reais em arquivos versionados. Para diferentes ambientes, utilize variáveis de ambiente ou um gerenciador de segredos.
