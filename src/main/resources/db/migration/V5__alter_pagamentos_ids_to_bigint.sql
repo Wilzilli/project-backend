@@ -1,0 +1,3 @@
+ALTER TABLE pagamentos
+    ALTER COLUMN id TYPE BIGINT,
+    ALTER COLUMN pedido_id TYPE BIGINT;

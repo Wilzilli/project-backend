@@ -1,0 +1,3 @@
+ALTER TABLE pedidos
+    ALTER COLUMN cliente_id TYPE BIGINT,
+    ALTER COLUMN unidade_id TYPE BIGINT;

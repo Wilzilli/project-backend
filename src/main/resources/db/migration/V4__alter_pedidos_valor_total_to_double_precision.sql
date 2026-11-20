@@ -1,0 +1,2 @@
+ALTER TABLE pedidos
+    ALTER COLUMN valor_total TYPE DOUBLE PRECISION;
