@@ -53,6 +53,12 @@ Documento OpenAPI:
 http://localhost:8080/v3/api-docs
 ```
 
+## Documentação acadêmica
+
+- Requisitos funcionais e não funcionais: `docs/requisitos.md`
+- LGPD, segurança e auditoria: `docs/lgpd-seguranca.md`
+- Plano de testes: `docs/plano-de-testes.md`
+
 ## Autenticação
 
 A API utiliza autenticação HTTP Basic. Usuários disponíveis para testes:
