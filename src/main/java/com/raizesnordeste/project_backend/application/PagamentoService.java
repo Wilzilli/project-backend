@@ -17,19 +17,19 @@ public class PagamentoService {
 
     private final PedidoRepository pedidoRepository;
     private final PagamentoRepository pagamentoRepository;
+    private final AuditoriaService auditoriaService;
 
-    public PagamentoService(PedidoRepository pedidoRepository, PagamentoRepository pagamentoRepository) {
+    public PagamentoService(PedidoRepository pedidoRepository, PagamentoRepository pagamentoRepository, AuditoriaService auditoriaService) {
         this.pedidoRepository = pedidoRepository;
         this.pagamentoRepository = pagamentoRepository;
+        this.auditoriaService = auditoriaService;
     }
 
     @Transactional
-    public Pagamento processar(Long pedidoId, PagamentoRequest request) {
-        // Busca o pedido antes de registrar a transação simulada.
+    public Pagamento processar(Long pedidoId, PagamentoRequest request, String usuario) {
         Pedido pedido = pedidoRepository.findById(pedidoId)
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pedido não encontrado"));
 
-        // Um pedido finalizado não deve receber novo pagamento.
         if ("PAGO".equals(pedido.getStatus()) || "CANCELADO".equals(pedido.getStatus())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Pedido já foi finalizado");
         }
@@ -60,7 +60,15 @@ public class PagamentoService {
         }
 
         pedidoRepository.save(pedido);
-        return pagamentoRepository.save(pagamento);
+        Pagamento pagamentoSalvo = pagamentoRepository.save(pagamento);
+        auditoriaService.registrar(
+            "PROCESSAR_PAGAMENTO",
+            "PAGAMENTO",
+            pagamentoSalvo.getId(),
+            usuario,
+            "Pedido=" + pedidoId + "; Forma=" + forma + "; Resultado=" + resultado
+        );
+        return pagamentoSalvo;
     }
 
     public List<Pagamento> listarPorPedido(Long pedidoId) {

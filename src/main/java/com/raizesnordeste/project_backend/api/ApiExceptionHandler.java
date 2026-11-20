@@ -18,7 +18,6 @@ import java.util.Map;
 public class ApiExceptionHandler {
 
     private ResponseEntity<Map<String, Object>> response(HttpStatus status, String message, HttpServletRequest request) {
-        // Mantém uma estrutura comum para facilitar o tratamento das respostas no cliente.
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now().toString());
         body.put("status", status.value());

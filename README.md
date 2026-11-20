@@ -151,6 +151,16 @@ Consultar pagamentos de um pedido:
 GET /pedidos/{pedidoId}/pagamentos
 ```
 
+### Auditoria
+
+Consultar registros de ações críticas:
+
+```text
+GET /auditoria
+```
+
+Disponível apenas para o perfil `ADMIN`. Os registros incluem ação, entidade, identificador, usuário e data/hora.
+
 ## Status HTTP
 
 - `200 OK`: consulta realizada com sucesso.

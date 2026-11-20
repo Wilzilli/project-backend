@@ -7,6 +7,5 @@ import java.util.List;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
-    // Permite consultar pedidos pelo canal utilizado na compra.
     List<Pedido> findByCanalPedido(String canalPedido);
 }

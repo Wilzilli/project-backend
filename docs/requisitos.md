@@ -20,6 +20,8 @@
 | RF14 | CLIENTE deve poder criar e consultar pedidos. | Alta |
 | RF15 | ATENDENTE e GERENTE devem poder processar pagamentos. | Alta |
 | RF16 | A documentação dos endpoints deve ser disponibilizada pelo Swagger/OpenAPI. | Média |
+| RF17 | O sistema deve registrar em banco ações críticas de criação de pedido e processamento de pagamento. | Alta |
+| RF18 | Somente usuários com perfil ADMIN devem consultar os registros de auditoria. | Alta |
 
 ## Requisitos não funcionais
 
@@ -37,3 +39,4 @@
 | RNF10 | O projeto deve possuir testes automatizados básicos e testes manuais documentados no Postman. | Alta |
 | RNF11 | Credenciais reais não devem ser versionadas no repositório público. | Alta |
 | RNF12 | A aplicação deve validar entradas antes de acessar regras de persistência. | Alta |
+| RNF13 | Logs de auditoria devem registrar usuário, ação, entidade, identificador e data/hora. | Alta |

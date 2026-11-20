@@ -48,4 +48,4 @@ Senha ou hash de senha não devem ser retornados pelas APIs. Senhas de desenvolv
 
 ## Auditoria
 
-A API deve registrar posteriormente o usuário responsável, data e horário das operações sensíveis. Dados mínimos recomendados incluem identificação do usuário, recurso acessado, ação realizada e resultado da operação, sem registrar senhas ou dados completos de autenticação.
+A API deve registrar posteriormente o usuário responsável, data e horário das operações sensíveis. Dados mínimos recomendados incluem identificação do usuário, recurso acessado, ação realizada e resultado da operação, sem registrar senhas ou dados completos de autenticação. Além disso, deve haver registro em banco de ações críticas, incluindo usuário, entidade e data/hora.

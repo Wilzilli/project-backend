@@ -21,10 +21,10 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/auditoria/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.POST, "/pedidos").hasAnyRole("CLIENTE", "ATENDENTE", "ADMIN")
                 .requestMatchers(HttpMethod.GET, "/pedidos").hasAnyRole("CLIENTE", "ATENDENTE", "GERENTE", "ADMIN")
                 .requestMatchers("/pedidos/*/pagamentos").hasAnyRole("ATENDENTE", "GERENTE", "ADMIN")
-                // O Swagger pode ser consultado sem autenticação.
                 .requestMatchers(
                     "/v3/api-docs",
                     "/v3/api-docs/**",

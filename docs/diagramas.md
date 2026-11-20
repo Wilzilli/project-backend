@@ -185,6 +185,16 @@ erDiagram
         timestamp created_at
     }
 
+    LOGS_AUDITORIA {
+        bigint id PK
+        varchar acao
+        varchar entidade
+        bigint entidade_id
+        varchar usuario
+        text detalhes
+        timestamp created_at
+    }
+
     ITENS_PEDIDO {
         bigint id PK
         bigint pedido_id FK
@@ -199,3 +209,4 @@ erDiagram
         bigint produto_id FK
         int quantidade_disponivel
     }
+```

@@ -28,10 +28,10 @@ public class Pedido {
     @NotBlank(message = "canalPedido é obrigatório")
     @Pattern(regexp = "APP|TOTEM|BALCAO|PICKUP|WEB", message = "canalPedido deve ser APP, TOTEM, BALCAO, PICKUP ou WEB")
     @Column(name = "canal_pedido", nullable = false)
-    private String canalPedido; // APP, TOTEM, BALCAO, PICKUP ou WEB
+    private String canalPedido;
 
     @Column(nullable = false)
-    private String status; // AGUARDANDO_PAGAMENTO, PAGO, COZINHA, PRONTO, ENTREGUE ou CANCELADO
+    private String status;
 
     @NotNull(message = "valorTotal é obrigatório")
     @Positive(message = "valorTotal deve ser maior que zero")

@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -27,9 +28,10 @@ public class PagamentoController {
     @PostMapping
     public ResponseEntity<Pagamento> processar(
         @PathVariable Long pedidoId,
-        @RequestBody @Valid PagamentoRequest request
+        @RequestBody @Valid PagamentoRequest request,
+        Principal principal
     ) {
-        Pagamento pagamento = pagamentoService.processar(pedidoId, request);
+        Pagamento pagamento = pagamentoService.processar(pedidoId, request, principal.getName());
         return ResponseEntity.status(HttpStatus.CREATED).body(pagamento);
     }
 
